@@ -6,13 +6,13 @@ Changelog
 0.10.1
 ~~~~~~
 
-2020-xx-xx • `full history <https://github.com/gorakhargosh/watchdog/compare/v0.10.0...master>`__
+2020-01-29 • `full history <https://github.com/gorakhargosh/watchdog/compare/v0.10.0...v0.10.1>`__
 
 Other Changes
 =============
-- Fixed Python 3.6 installation when the OS locale is set to POSIX (`#615 <https://github.com/gorakhargosh/watchdog/pull/615>`__)
-- [snapshot] Added EmptyDirectorySnapshot (`#613 <https://github.com/gorakhargosh/watchdog/pull/613>`__)
-- Thanks to our beloved contributors: @Ajordat, @tehkirill
+- Fixed Python 2.7 to 3.6 installation when the OS locale is set to POSIX (`#615 <https://github.com/gorakhargosh/watchdog/pull/615>`__)
+- [snapshot] Added ``EmptyDirectorySnapshot`` (`#613 <https://github.com/gorakhargosh/watchdog/pull/613>`__)
+- Thanks to our beloved contributors: @Ajordat, @tehkirill, @BoboTiG
 
 
 0.10.0
