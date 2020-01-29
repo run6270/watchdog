@@ -22,7 +22,6 @@ from codecs import open
 from setuptools import setup, find_packages
 from setuptools.extension import Extension
 from setuptools.command.build_ext import build_ext
-from distutils.util import get_platform
 
 SRC_DIR = 'src'
 WATCHDOG_PKG_DIR = os.path.join(SRC_DIR, 'watchdog')
@@ -38,7 +37,7 @@ else:
     version = imp.load_source('version', os.path.join(WATCHDOG_PKG_DIR, 'version.py'))
 
 ext_modules = []
-if get_platform().startswith('macosx'):
+if sys.platform == 'darwin':
     ext_modules = [
         Extension(
             name='_watchdog_fsevents',
@@ -66,7 +65,10 @@ if get_platform().startswith('macosx'):
                 '-fPIC',
 
                 # required w/Xcode 5.1+ and above because of '-mno-fused-madd'
-                '-Wno-error=unused-command-line-argument'
+                '-Wno-error=unused-command-line-argument',
+
+                # Fix for macOS Catalina and newer (see #620)
+                '-Wno-nullability-completeness',
             ]
         ),
     ]
